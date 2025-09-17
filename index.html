@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>My CSV Table</title>
+<!-- استدعاء مكتبة DataTables من CDN -->
+<link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
+<script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+<script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+</head>
+<body>
+<h1>My CSV Table</h1>
+
+<table id="csvTable" class="display" style="width:100%">
+  <thead></thead>
+  <tbody></tbody>
+</table>
+
+<script>
+// اسم ملف الـ CSV
+const csvFile = 'data.csv'; // غير الاسم لو CSV اسمه مختلف
+
+// جلب الـ CSV وتحويله لجدول
+fetch(csvFile)
+  .then(response => response.text())
+  .then(data => {
+    const rows = data.trim().split('\n').map(r => r.split(','));
+    const headers = rows.shift();
+
+    // بناء رأس الجدول
+    let theadHTML = '<tr>';
+    headers.forEach(h => theadHTML += `<th>${h}</th>`);
+    theadHTML += '</tr>';
+    document.querySelector('#csvTable thead').innerHTML = theadHTML;
+
+    // بناء جسم الجدول
+    let tbodyHTML = '';
+    rows.forEach(row => {
+      tbodyHTML += '<tr>';
+      row.forEach(cell => tbodyHTML += `<td>${cell}</td>`);
+      tbodyHTML += '</tr>';
+    });
+    document.querySelector('#csvTable tbody').innerHTML = tbodyHTML;
+
+    // تفعيل DataTables
+    $('#csvTable').DataTable();
+  });
+</script>
+</body>
+</html>
