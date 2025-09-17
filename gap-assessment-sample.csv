@@ -1,0 +1,27 @@
+﻿Gap Assessment ,,,,,
+Control,Description,Score (0-3),Status (Compliant/Partial/Not),Evidence,Recommendation
+Access Control Policy,Is there a documented access control policy for systems - buildings ?,3,complaint ,Policy v1.0 available,annual review 
+Password Policy,As there a strong password policy enforced ?,1,partial,policy outdated not enforced on AD,updates  and enforce via system
+Employee Security Training,Are emloyees trained periodically on information secuirty ?,2,partial,Training logs show not all employees completed training,Schedule additional training sessions for remaining employees
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
